@@ -7,6 +7,7 @@ var database = require('./config/database.js');
 var auth = require ('./auth/main_auth')
 
 var clientesRouter = require('./routes/clientes.router');
+var usuariosRouter = require('./routes/usuario.router');
 
 var app = express();
 
@@ -18,6 +19,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //mongo connection
 database.mongoConnect();
+
+app.use('/usuarios', usuariosRouter);
+
 app.use(auth);
 
 //Router
