@@ -18,7 +18,7 @@ export default class Menu extends React.Component {
     
     render() { 
         return ( 
-        <Navbar id="navbar" bg="primary" variant="dark">
+        <Navbar id="navbar" bg="light" variant="light">
         <Container>
             <Navbar.Brand href="#home">
                 Fashion Paris <span id="usuario-sub-branm"></span>

@@ -19,9 +19,10 @@ export default class login extends React.Component {
     render() {
         return (
             <Container id="login-container">
-                <Row>
-                    <h2>Iniciar Sesión</h2>
-                </Row>
+                
+                <Row >
+                    
+                </Row >
                 <Row>
                     <Col
                     sm="12"
@@ -30,6 +31,8 @@ export default class login extends React.Component {
                     lg= {{span:4, offset:4 }}
                     xl= {{span:4, offset:4 }}
                     >
+                        <div class="caja_trasera">
+                        <h2>Iniciar Sesión</h2>
                         <Form>
                             <Form.Group>
                                 <Form.Label>Usuario</Form.Label>
@@ -58,8 +61,9 @@ export default class login extends React.Component {
                                 Iniciar Sesión
                             </Button>
                         </Form>
-                    </Col>
-                </Row>
+                        </div>
+                    </Col>                    
+                </Row>                
             </Container>
         );
     }

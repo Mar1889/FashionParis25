@@ -1,11 +1,32 @@
+body{
+    background-image: url(../../image/login.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
 #login-container{
-    margin-top: 10%
+    margin-top: 10%;
 }
 
 #login-container h2,
 #login-container button,
 #login-container form {
     width:100%;
+}
+
+.caja_trasera{
+    width: 100%;
+    padding: 10px 20px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(45, 38, 3, 0.5);
+}
+
+.caja_trasera h2{
+    color: #ffff;
+}
+
+.form-label{
+    color: #ffff;
 }
 
 #login-container button{
