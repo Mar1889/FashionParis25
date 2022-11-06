@@ -53,7 +53,7 @@ export default class login extends React.Component {
                                 />
                             </Form.Group>
                             <Button
-                                variant="primary"
+                                variant="danger"
                                 onClick= { ()=>{
                                     this.iniciarSesion();
                                 }}

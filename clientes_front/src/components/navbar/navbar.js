@@ -30,7 +30,9 @@ export default class Menu extends React.Component {
                 <Nav.Link href="#link">Link</Nav.Link> */}
             </Nav>
 
-            <DropdownButton id="dropdown-basic-button" title="Usuario">
+            <DropdownButton 
+                id="dropdown-basic-button" 
+                title="Usuario">
                 <Dropdown.Header id="dropdown-header">
                     <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
                 </Dropdown.Header>
