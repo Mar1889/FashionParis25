@@ -5,6 +5,7 @@ import {
     DropdownButton, 
     Nav, 
     Navbar,
+    Row,
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
@@ -18,7 +19,7 @@ export default class Menu extends React.Component {
     
     render() { 
         return ( 
-        <Navbar id="navbar" bg="light" variant="light">
+        <Navbar fixed="top" id="navbar" bg="light" variant="light">
         <Container>
             <Navbar.Brand href="#home">
                 Fashion Paris <span id="usuario-sub-branm"></span>
@@ -34,8 +35,14 @@ export default class Menu extends React.Component {
                 id="dropdown-basic-button" 
                 title="Usuario">
                 <Dropdown.Header id="dropdown-header">
-                    <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
+                    <Row>
+                        <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
+                    </Row>
+                    <Row>
+                        #Usuario#
+                    </Row>                
                 </Dropdown.Header>
+                <Dropdown.Divider />
                 <Dropdown.Item href="#/action-1">Cerrar Sesion</Dropdown.Item>
                 {/* <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
                 <Dropdown.Item href="#/action-3">Something else</Dropdown.Item> */}

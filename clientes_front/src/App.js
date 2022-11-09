@@ -2,7 +2,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container} from 'react-bootstrap';
-import Login  from './components/login/login';
+import AppRoutes  from './components/router/router';
 import Menu  from './components/navbar/navbar';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
         <Menu />
       <Container>
-        <Login />
+        <AppRoutes />
       </Container>
     </div>
   );
