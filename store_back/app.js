@@ -7,6 +7,7 @@ var database = require('./config/database.js');
 var auth = require ('./auth/main_auth')
 
 var clientesRouter = require('./routes/clientes.router');
+var productosRouter = require('./routes/productos.router');
 var usuariosRouter = require('./routes/usuario.router');
 
 var app = express();
@@ -26,6 +27,7 @@ app.use(auth);
 
 //Router
 app.use('/clientes', clientesRouter);
+app.use('/productos', productosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
