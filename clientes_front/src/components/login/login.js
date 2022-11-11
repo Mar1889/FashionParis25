@@ -1,6 +1,10 @@
 import React from "react"; //imr atajo
+import axios from "axios"; 
 import { Container, Button, Form, Row, Col } from "react-bootstrap";
 import './login.css';
+import app from '../../app.json';
+
+const {APIHOST} = app;
 
 export default class login extends React.Component {
     //ccc atajo
@@ -13,15 +17,22 @@ export default class login extends React.Component {
     }
 
     iniciarSesion(){
-        alert(`usuario: ${this.state.usuario} - password: ${this.state.pass}`);
+        axios.post(`${APIHOST}/usuarios/login`, {
+            usuario: this.state.usuario,
+            pass: this.state.pass,
+        })
+        .then((response) =>{
+            console.log(response)
+        })
+        .catch((err) =>{
+            console.log(err)
+        });
     }
 
     render() {
         return (
-            <Container id="login-container">
-                
-                <Row >
-                    
+            <Container id="login-container">               
+                <Row >                    
                 </Row >
                 <Row>
                     <Col
@@ -31,7 +42,7 @@ export default class login extends React.Component {
                     lg= {{span:4, offset:4 }}
                     xl= {{span:4, offset:4 }}
                     >
-                        <div class="caja_trasera">
+                        <div id="caja_trasera">
                         <h2>Iniciar Sesión</h2>
                         <Form>
                             <Form.Group>

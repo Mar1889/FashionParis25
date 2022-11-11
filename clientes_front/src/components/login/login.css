@@ -13,7 +13,7 @@ body{
     width:100%;
 }
 
-.caja_trasera{
+#caja_trasera{
     width: 100%;
     padding: 10px 20px;
     -webkit-backdrop-filter: blur(10px);
