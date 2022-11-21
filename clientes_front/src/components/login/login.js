@@ -2,6 +2,8 @@ import React from "react"; //imr atajo
 import axios from "axios"; 
 import { Container, Button, Form, Row, Col } from "react-bootstrap";
 import './login.css';
+import { isNull } from 'util';
+// import Cookies from "universal-cookie";
 import app from '../../app.json';
 
 const {APIHOST} = app;
@@ -22,7 +24,11 @@ export default class login extends React.Component {
             pass: this.state.pass,
         })
         .then((response) =>{
-            console.log(response)
+            if (isNull(response.data.token)){
+                alert('Usuario y/o contraseña invalidos')
+            }else{
+                
+            }
         })
         .catch((err) =>{
             console.log(err)
