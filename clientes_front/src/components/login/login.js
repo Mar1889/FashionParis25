@@ -2,10 +2,13 @@ import React from "react"; //imr atajo
 import axios from "axios"; 
 import { Container, Button, Form, Row, Col } from "react-bootstrap";
 import './login.css';
-import { isNull } from 'util';
-// import Cookies from "universal-cookie";
 import app from '../../app.json';
+import { isNull } from 'util';
+import Cookies from "universal-cookie";
+import { calculaExracionSesion} from '../helper/helper';
+import Loading from "../loading/loading";
 
+const cookies = new Cookies();
 const {APIHOST} = app;
 
 export default class login extends React.Component {
@@ -13,13 +16,18 @@ export default class login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            loading: false,
             usuario: '',
             pass: '',
         };
     }
 
     iniciarSesion(){
-        axios.post(`${APIHOST}/usuarios/login`, {
+
+        this.setState({ loading: true });
+
+        axios
+        .post(`${APIHOST}/usuarios/login`, {
             usuario: this.state.usuario,
             pass: this.state.pass,
         })
@@ -27,17 +35,26 @@ export default class login extends React.Component {
             if (isNull(response.data.token)){
                 alert('Usuario y/o contraseña invalidos')
             }else{
-                
+            cookies.set('_s', response.data.token, {
+                    path: '/',
+                    expires: calculaExracionSesion(),
+                });
+                this.props.history.push('/home')
             }
+
+            this.setState({ loading: false });
         })
         .catch((err) =>{
-            console.log(err)
+            console.log(err);
+            this.setState({ loading: false });
         });
     }
 
     render() {
         return (
-            <Container id="login-container">               
+            <Container id="login-container"> 
+
+                <Loading show={this.state.loading} />              
                 <Row >                    
                 </Row >
                 <Row>
