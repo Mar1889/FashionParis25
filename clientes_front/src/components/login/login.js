@@ -5,7 +5,7 @@ import './login.css';
 import app from '../../app.json';
 import { isNull } from 'util';
 import Cookies from "universal-cookie";
-import { calculaExracionSesion} from '../helper/helper';
+import { caLcuLaExracionSesion } from '../helper/helper';
 import Loading from "../loading/loading";
 
 const cookies = new Cookies();
@@ -37,9 +37,9 @@ export default class login extends React.Component {
             }else{
             cookies.set('_s', response.data.token, {
                     path: '/',
-                    expires: calculaExracionSesion(),
+                    expires: caLcuLaExracionSesion(),
                 });
-                this.props.history.push('/home')
+                this.props.history.push(window.open('/productos'));
             }
 
             this.setState({ loading: false });

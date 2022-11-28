@@ -1,16 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import PrivateRoute from '../auth/privateroute';
-
 import Login from '../login/login';
-import clientes from '../clientes/clientes.buscar';
+import Inicio from '../index/index';
+import PrivateRoute from '../auth/privateroute';
+import Productos from '../productos/index';
 
 export default function AppRoutes(){
     return(
         <Router>
-            <Switch>
+            <Switch>                
+                <PrivateRoute exact path="/productos" component={ Productos } />
                 <Route exact path={["/login"]} component={Login} />
-                <PrivateRoute exact path="/clientes" component={clientes} />
+                <Route exact path= {["/"]} component={Inicio} />
+                <Route exact path= {["/index"]} component={Inicio} />
                 <Route 
                     path={"*"} 
                     component={() => (
