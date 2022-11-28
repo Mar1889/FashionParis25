@@ -9,3 +9,4 @@ const ProductosSchema = new Schema ({
 });
 
 module.exports = mongoose.model("productos", ProductosSchema);
+    
