@@ -36,7 +36,6 @@ export default class ProductosEditar extends React.Component {
 
     componentDidMount() {
         this.getProducto();
-        console.log(this.props.getIdProducto())
     }
 
     getProducto(){

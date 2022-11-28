@@ -19,7 +19,7 @@ export default class Productos extends React.Component {
     }
 
     changeTab(tab) {
-        this.setState({current: tab});
+        this.setState({currentTab: tab});
     }
 
     setIdProducto(id){

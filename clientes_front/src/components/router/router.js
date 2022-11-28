@@ -9,7 +9,7 @@ export default function AppRoutes(){
     return(
         <Router>
             <Switch>                
-                <PrivateRoute exact path="/productos" component={ Productos } />
+                <PrivateRoute exact path={["/productos"]} component={ Productos } />
                 <Route exact path={["/login"]} component={Login} />
                 <Route exact path= {["/"]} component={Inicio} />
                 <Route exact path= {["/index"]} component={Inicio} />
@@ -22,5 +22,5 @@ export default function AppRoutes(){
                 )}/>
             </Switch>
         </Router>
-    )
+    );
 }
